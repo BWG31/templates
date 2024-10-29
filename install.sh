@@ -32,4 +32,4 @@ if [[ ":$PATH:" != *":$BIN_DIR:"* ]]; then
 	export PATH="$PATH:$HOME/.config/bin"
 fi
 
-echo "Installation complete. You can now use '$COMMAND_NAME' to copy the Makefile template to any project directory."
+echo "Installation complete. Command available: $COMMAND_NAME"
