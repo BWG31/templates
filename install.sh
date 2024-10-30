@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define variables
-INSTALL_DIR="$HOME/.config/makefile_template"
+INSTALL_DIR="$HOME/.config/makefile_templates"
 BIN_DIR="$HOME/.config/bin"
 COMMAND_SCRIPT="command_script.sh"
 COMMAND_NAME="new_makefile"
@@ -10,7 +10,7 @@ SHELL_CONFIG_FILE="$HOME/.workwork_config"
 mkdir -p "$INSTALL_DIR"
 mkdir -p "$BIN_DIR"
 
-cp	Makefile $INSTALL_DIR/
+cp	 templates/* $INSTALL_DIR/
 
 # Create the executable command
 if [ -e "$COMMAND_SCRIPT" ]; then
