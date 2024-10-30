@@ -1,3 +1,0 @@
-# HELLO THIS IS A MAKEFILE
-
-NAME = hello
