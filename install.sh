@@ -3,6 +3,7 @@
 # Define variables
 INSTALL_DIR="$HOME/.config/templates"
 MK_DIR="mk_templates"
+CPP_DIR="cpp_templates"
 SCRIPTS_DIR="scripts"
 COMMAND_SCRIPT="template.sh"
 COMMAND_NAME="template"
@@ -12,6 +13,7 @@ SCRIPT_ALIAS="alias $COMMAND_NAME=\"$INSTALL_DIR/$COMMAND_SCRIPT\""
 mkdir -p "$INSTALL_DIR"
 
 cp -R $MK_DIR $INSTALL_DIR/
+cp -R $CPP_DIR $INSTALL_DIR/
 cp -R $SCRIPTS_DIR $INSTALL_DIR/
 
 # Create the executable command
