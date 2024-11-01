@@ -1,7 +1,7 @@
 #include "Nameplaceholder.hpp"
 
 //  ==========| CONSTRUCTORS |==========
-Nameplaceholder:Nameplaceholder()
+Nameplaceholder::Nameplaceholder()
 {
     //  DEFAULT
 }
