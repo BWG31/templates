@@ -12,19 +12,24 @@ SRC_DIR="src"
 TARGET_HDR="$INC_DIR/$CLASSNAME.hpp"
 TARGET_SRC="$SRC_DIR/$CLASSNAME.cpp"
 
-if [ -e "$CPP_TEMPLATES_DIR" ]; then
-	if [ ! -e "$INC_DIR" ]; then
-		mkdir $INC_DIR
+function generate_template() {
+	cp $1 $2
+	if [[ "$(uname)" = "Darwin" ]]; then
+		sed -i '' s/Nameplaceholder/$3/g $2
+		NAME_UPPER=$(echo "$3" | awk '{print toupper($0)}')
+		sed -i '' s/NAMEPLACEHOLDER/$NAME_UPPER/g $2
+	else
+		sed -i s/Nameplaceholder/$3/g $2
+		NAME_UPPER=$(echo "$3" | awk '{print toupper($0)}')
+		sed -i s/NAMEPLACEHOLDER/$NAME_UPPER/g $2
 	fi
-	if [ ! -e "$SRC_DIR" ]; then
-		mkdir $SRC_DIR
-	fi
-	cp $HDR_TEMPLATE $TARGET_HDR
-	cp $SRC_TEMPLATE $TARGET_SRC
-	sed -i s/Nameplaceholder/$CLASSNAME/g $TARGET_HDR
-	CLASSNAME=$(echo "$CLASSNAME" | awk '{print toupper($0)}')
-	sed -i s/NAMEPLACEHOLDER/$CLASSNAME/g $TARGET_HDR
-	
+}
+
+if [[ -e "$CPP_TEMPLATES_DIR" ]]; then
+	mkdir -p $INC_DIR $SRC_DIR
+	generate_template $HDR_TEMPLATE $TARGET_HDR $CLASSNAME
+	generate_template $SRC_TEMPLATE $TARGET_SRC $CLASSNAME
+	echo "Class files created: $TARGET_HDR, $TARGET_SRC"
 else
-  echo "Can't find cpp templates in : $CPP_TEMPLATES_DIR"
+  echo "Error: Cannot find C++ templates in : $CPP_TEMPLATES_DIR"
 fi
