@@ -23,6 +23,8 @@ INCLUDES	=	-I $(INC_DIR)
 RESET		=	\033[0;39m
 GREEN		=	\033[0;32m
 
+MAKEFLAGS	:=	--no-print-directory
+
 all:			$(NAME)
 
 -include $(DEPS)
@@ -35,7 +37,7 @@ $(OBJ_DIR)%.o:	$(SRC_DIR)%.c | $(DEP_DIR) $(OBJ_DIR)
 				$(CC) $(CFLAGS) $(DFLAGS) $(DEP_FILE) $(INCLUDES) -c $< -o $@
 
 $(DEP_DIR) $(OBJ_DIR):
-				mkdir -p $@
+				@mkdir -p $@
 
 clean:
 				$(RM) -f $(OBJ_DIR) $(DEP_DIR)
@@ -44,6 +46,6 @@ fclean:			clean
 				$(RM) $(NAME)
 
 re:				fclean
-				$(MAKE) all
+				@$(MAKE) all
 
 .PHONY: all clean fclean re
