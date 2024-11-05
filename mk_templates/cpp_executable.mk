@@ -11,7 +11,7 @@ CC			:=	c++
 CFLAGS		:=	-Wall -Wextra -Werror -std=c++98
 DFLAGS		:=	-MMD -MF
 DEP_FILE	=	$(DEP_DIR)$*.d
-RM			:=	rm -r
+RM			:=	rm -rf
 
 SRCS	:=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC)))
 OBJS	:=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC)))
@@ -40,7 +40,7 @@ $(DEP_DIR) $(OBJ_DIR):
 				@mkdir -p $@
 
 clean:
-				$(RM) -f $(OBJ_DIR) $(DEP_DIR)
+				$(RM) $(OBJ_DIR) $(DEP_DIR)
 
 fclean:			clean
 				$(RM) $(NAME)

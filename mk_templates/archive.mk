@@ -11,7 +11,7 @@ CC			:=	gcc
 CFLAGS		:=	-Wall -Wextra -Werror
 DFLAGS		:=	-MMD -MF
 DEP_FILE	=	$(DEP_DIR)$*.d
-RM			:=	rm -r
+RM			:=	rm -rf
 AR			:=		ar -rc
 
 SRCS	:=	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC)))
@@ -40,7 +40,7 @@ $(DEP_DIR) $(OBJ_DIR):
 				@mkdir -p $@
 
 clean:
-				$(RM) -f $(OBJ_DIR) $(DEP_DIR)
+				$(RM) $(OBJ_DIR) $(DEP_DIR)
 
 fclean:			clean
 				$(RM) $(NAME)
