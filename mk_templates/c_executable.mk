@@ -48,4 +48,7 @@ fclean:			clean
 re:				fclean
 				@$(MAKE) all
 
-.PHONY: all clean fclean re
+debug:			clean
+				@$(MAKE) CFLAGS="$(CFLAGS) -g" all
+
+.PHONY: all clean fclean re debug
