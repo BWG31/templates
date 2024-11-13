@@ -31,7 +31,7 @@ all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				$(AR) $@ $(OBJS)
-				@printf "Created archive: $(GREEN)$(NAME)$(RESET)"
+				@printf "Created archive: $(GREEN)$(NAME)$(RESET)\n"
 
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c | $(DEP_DIR) $(OBJ_DIR)
 				$(CC) $(CFLAGS) $(DFLAGS) $(DEP_FILE) $(INCLUDES) -c $< -o $@

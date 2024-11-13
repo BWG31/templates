@@ -31,7 +31,7 @@ all:			$(NAME)
 
 $(NAME):	$(OBJS)
 			$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) -o $@
-			@printf "Created executable: $(GREEN)$(NAME)$(RESET)"
+			@printf "Created executable: $(GREEN)$(NAME)$(RESET)\n"
 
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.cpp | $(DEP_DIR) $(OBJ_DIR)
 				$(CC) $(CFLAGS) $(DFLAGS) $(DEP_FILE) $(INCLUDES) -c $< -o $@
