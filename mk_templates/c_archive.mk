@@ -12,7 +12,7 @@ CFLAGS		:=	-Wall -Wextra -Werror
 DFLAGS		:=	-MMD -MF
 DEP_FILE	=	$(DEP_DIR)$*.d
 RM			:=	rm -rf
-AR			:=		ar -rc
+AR			:=	ar -rc
 
 SRCS	:=	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC)))
 OBJS	:=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC)))
