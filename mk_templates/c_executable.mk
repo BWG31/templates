@@ -20,8 +20,8 @@ DEPS	:=	$(addprefix $(DEP_DIR), $(addsuffix .d, $(SRC)))
 INCLUDES	=	-I $(INC_DIR)
 LDFLAGS		=	
 
-RESET		=	\033[0;39m
-GREEN		=	\033[0;32m
+RESET		=	\033[0m
+GREEN		=	\033[32m
 
 MAKEFLAGS	:=	--no-print-directory
 
