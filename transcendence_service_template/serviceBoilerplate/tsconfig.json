@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "outDir": "dist",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+	  "@root/*": ["src/*"],
+      "@tests/*": ["tests/*"],
+      "@presentation/*": ["src/presentation/*"],
+      "@application/*": ["src/application/*"],
+      "@domain/*": ["src/domain/*"],
+      "@infrastructure/*": ["src/infrastructure/*"],
+      "@core/*": ["src/core/*"]
+    }
+  },
+  "references": [{ "path": "../../packages/shared" }],
+  "include": ["src", "tests"]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@transcendence/__service__",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+	"build": "tsc",
+	"start": "node dist/server.js",
+	"dev": "tsx watch src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.0",
+    "devDependencies": {
+    "@types/node": "^22.15.27",
+    "@types/pino": "^7.0.5",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@transcendence/shared": "workspace:^",
+    "close-with-grace": "^2.2.0",
+    "cuid": "^3.0.0",
+    "fastify": "^5.3.3",
+    "pino": "^9.7.0",
+    "pino-pretty": "^13.0.0",
+    "sqlite3": "^5.1.7",
+    "ts-dotenv": "^0.9.1"
+  }
+}

@@ -4,6 +4,7 @@
 INSTALL_DIR="$HOME/.config/templates"
 MK_DIR="mk_templates"
 CPP_DIR="cpp_templates"
+TR_SRV_DIR="transcendence_service_template"
 SCRIPTS_DIR="scripts"
 COMMAND_SCRIPT="template.sh"
 COMMAND_NAME="template"
@@ -15,6 +16,7 @@ mkdir -p "$INSTALL_DIR"
 cp -R $MK_DIR $INSTALL_DIR/
 cp -R $CPP_DIR $INSTALL_DIR/
 cp -R $SCRIPTS_DIR $INSTALL_DIR/
+cp -R $TR_SRV_DIR $INSTALL_DIR/
 
 # Create the executable command
 if [ -e "$COMMAND_SCRIPT" ]; then
