@@ -8,13 +8,13 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-	  "@root/*": ["src/*"],
       "@tests/*": ["tests/*"],
       "@presentation/*": ["src/presentation/*"],
       "@application/*": ["src/application/*"],
       "@domain/*": ["src/domain/*"],
       "@infrastructure/*": ["src/infrastructure/*"],
-      "@core/*": ["src/core/*"]
+      "@core/*": ["src/core/*"],
+	  "@root/*": ["src/*"]
     }
   },
   "references": [{ "path": "../../packages/shared" }],
