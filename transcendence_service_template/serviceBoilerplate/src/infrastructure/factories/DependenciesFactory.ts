@@ -32,7 +32,7 @@ export class DependenciesFactory {
 		if (env.__SERVICE__SERVICE_PORT == null || isNaN(env.__SERVICE__SERVICE_PORT))
 			throw new Error(`__SERVICE__SERVICE_PORT is required and must be a valid number`);
 
-		if (env.__SERVICE__SERVICE_PORT < 0 || env.__SERVICE__SERVICE_PORT > 0xFFFF)
+		if (env.__SERVICE__SERVICE_PORT <= 1024 || env.__SERVICE__SERVICE_PORT > 0xFFFF)
 			throw new Error(`Invalid __SERVICE__SERVICE_PORT: ${env.__SERVICE__SERVICE_PORT}`);
 	}
 }
